@@ -1,7 +1,7 @@
-class SessionController < ApplicationController
+class SessionsController < ApplicationController
   def new
   end
 
-  def create
+  def creates
   end
 end

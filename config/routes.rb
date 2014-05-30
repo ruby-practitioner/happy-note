@@ -2,10 +2,10 @@ HappyNote::Application.routes.draw do
   root 'happy#index'
 
   resources :users, only: [:new, :create]
-  resrouces :sessions, only: [:new, :create]
+  resources :sessions, only: [:new, :create]
 
-  match '/register', to: 'user#new', via: :get
-  match '/login', to: 'session#new', via: :get
+  match '/register', to: 'users#new', via: :get
+  match '/login', to: 'sessions#new', via: :get
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

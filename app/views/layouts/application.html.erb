@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HappyNote</title>
+  <title><%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<header>
+  <h1>Happy Note</h1>
+</header>
+
+<nav>
+  <hr>
+    <%= link_to 'Home', root_path %> |
+    <%= link_to 'Register', register_path %> |
+    <%= link_to 'Login', login_path %>
+  <hr>
+</nav>
+
+<section>
+  <% flash.each do |name, value| %>
+    <h3><%= value %></h3>
+  <% end %>
+  <%= yield %>
+</section>
+
 
 </body>
 </html>
